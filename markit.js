@@ -25,7 +25,7 @@ function markit(textareas) {
             	if (targ.nodeType == 3) targ = targ.parentNode;
             	if (targ.tagName == 'A') {
             	    var formats = [];
-            	    //formats[type] = [prepend, append, before, after];
+            	    //formats[type] = [prepend, append];
             	    formats['bold'] = ['**', '**'];
             	    formats['italic'] = ['_', '_'];
             	    formats['link'] = ['[', ']('];
@@ -62,7 +62,7 @@ function markit(textareas) {
             	    textarea.value = original.substr(0, start)+before+selected+after+original.substring(end, textarea.length);
             	    textarea.selectionStart = start+before.length;
             	    textarea.selectionEnd = start+before.length+selected.length;
-                	return false;
+                    e.preventDefault();
             	}
             });
             textarea.parentNode.insertBefore(formatting, textarea);
