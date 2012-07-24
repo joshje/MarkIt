@@ -70,4 +70,6 @@ function markit(textareas) {
     }
 }
 
-markit(qwery('.markit'));
+if (document.querySelectorAll) {
+    markit(document.querySelectorAll('.markit'));
+}
